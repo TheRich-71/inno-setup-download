@@ -42,5 +42,5 @@ Add-Content $Env:GITHUB_PATH "$(Get-Location)\inno"
 
 Write-Host "InnoSetup: Set License Key if available"
 Get-PSDrive -PSProvider Registry
-New-Item HKCU:\Software\Jordan Russell\Inno Setup
-New-ItemProperty -Type String -Path HKCU:\Software\Jordan Russell\Inno Setup -Name License -value ${env:IS_LICENSEKEY}
+New-Item "HKCU:\Software\Jordan Russell\Inno Setup"
+New-ItemProperty -Type String -Path "HKCU:\Software\Jordan Russell\Inno Setup" -Name License -value ${env:IS_LICENSEKEY}

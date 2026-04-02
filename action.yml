@@ -5,6 +5,10 @@ inputs:
     description: 'InnoSetup Version'
     required: false
     default: '6.2.2'
+  licensekey: 
+     description: "InnoSetup Commercial License Key"
+     required: false
+     default: ''
 branding:
   color: blue
   icon: arrow-down-circle
@@ -16,4 +20,4 @@ runs:
       run: "${{ github.action_path }}/entrypoint.ps1"
       env:
         IS_VERSION: ${{ inputs.version }}
-        IS_LICENSEKEY: ${{ secrets.INNOSETUPLICENSEKEY }}
+        IS_LICENSEKEY: ${{ inputs.licensekey }}
